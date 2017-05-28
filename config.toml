@@ -1,0 +1,20 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "hugo-lithium-theme"
+
+[params]
+    [params.logo]
+    url = "logo.ico"
+    width = 50
+    height = 50
+    alt = "Logo"
+
+[[menu.main]]
+    name = "Articles"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2

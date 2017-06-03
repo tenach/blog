@@ -18,7 +18,7 @@ deploy:
   on:
     branch: master
   local_dir: public
-  repo: <yourname>/<yourname>.github.io
+  repo: tenach/tenach.github.io
   target_branch: master
   email: deploy@travis-ci.org
   name: deployment-bot

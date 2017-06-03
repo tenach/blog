@@ -1,7 +1,6 @@
 +++
 title = "在 Vultr 上搭建 Shadowsocks 服务端"
 date = "2017-06-03"
-draft = true
 +++
 
 <center>

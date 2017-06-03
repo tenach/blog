@@ -1,11 +1,11 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Tenach - 推那墙"
 theme = "hugo-lithium-theme"
 
 [params]
     [params.logo]
-    url = "logo.ico"
+    url = "fist.png"
     width = 50
     height = 50
     alt = "Logo"

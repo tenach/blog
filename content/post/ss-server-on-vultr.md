@@ -249,11 +249,13 @@ docker run -d --restart=always \
 <center>
 <img src="ss-server-vultr-14.png" width="95%" />
 
-图14. 在 VPS 中安装 Docker
+图14. 启动 Shadowsocks 容器
 </center>
 
 接着，可以通过服务器地址、端口 `8388`、密码 `abc123` 以及默认加密方式 `aes-256-cfb`
 去连接了，跳到 “[客户端连接与验证](#clientcfg)”。
+
+> 这里端口、密码和加密方式可以自己设置。
 
 ## 命令解释
 
@@ -353,18 +355,44 @@ Linux 用户见： 《[Linux 上使用 Shadowsocks 教程][ss-linux]》
 
 # 其他一些过程记录（拓展部分）
 
+## 修改密码
+如果觉得 Vultr 自动生成的密码太长太复杂不好记。可以修改登录密码。
+
+SSH 进入主机控制台，并运行命令：
+```sh
+$ passwd root
+Changing password for root.
+Current password: （输入原密码）
+New password: （输入新密码）
+Retype new password: （再次输入新密码）
+```
+
+> 修改后的密码自己要牢记，如果遗忘，Vultr 似乎没有办法重置，只能重装 VPS 系统了。
+
 ## 安全配置
-为了安全，禁止密码登录，只允许使用私钥登录。
+尽管修改了密码，使用用户名、密码方式登录主机也并不安全。尤其是在修改密码后，设置了简单
+的密码，那更危险了。我第二天登录时，发现有 4000 多次登录失败。假如密码被试对了，那骇客
+就可以对这台主机做任何操作了。
+```
+Last failed login: Sun Jun  4 15:06:48 UTC 2017 from 61.177.172.56 on ssh:notty
+There were 4728 failed login attempts since the last successful login.
+```
+
+一个好的方法是禁用密码登录，而是只使用密钥登录。这里密钥是指用
+OpenSSL 工具生成的非对称密钥对。
+
+**为了安全，推荐禁止密码登录，只允许使用私钥登录。**
 
 ### 添加公钥
 生成密钥对，保留私钥。
 ```sh
 $ ssh-keygen
+（一路回车，将在 ~/.ssh/ 下生成 id_rsa 和 id_rsa.pub 两个文件，分别为私钥和公钥。）
 
 $ cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 ```
 
-复制私钥并妥善保管。
+复制私钥并妥善保存到自己的电脑上。
 
 ### 禁止通过密码登录
 ```sh

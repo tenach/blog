@@ -15,6 +15,9 @@ Vultr 云平台
 配置过程步骤较多，如果不想麻烦，可联络我帮忙代购并配置 Vultr 主机，最后打赏一点手工费
 就好啦。
 
+依照本文教程进行 Shadowsocks server 配置时，需要具备一定 Linux 控制台使用基础，起码
+需要了解 vi 等编辑器的使用和 ssh 的使用。
+
 # 注册 Vultr 帐号
 如果已有 Vultr 帐号，可忽略本节，跳到 “[配置支付方式](#setpay)” 。
 
@@ -384,7 +387,7 @@ OpenSSL 工具生成的非对称密钥对。
 **为了安全，推荐禁止密码登录，只允许使用私钥登录。**
 
 ### 添加公钥
-生成密钥对，保留私钥。
+生成密钥对，添加公钥到受信任的密钥中，并保留私钥。
 ```sh
 $ ssh-keygen
 （一路回车，将在 ~/.ssh/ 下生成 id_rsa 和 id_rsa.pub 两个文件，分别为私钥和公钥。）
@@ -400,12 +403,26 @@ $ vi /etc/ssh/sshd_config
 # 查找并修改下面两项
 PasswordAuthentication no //禁止使用基于口令认证的方式登陆
 PubkeyAuthentication yes //允许使用基于密钥认证的方式登陆
-systemctl restart sshd
 ```
 
-## 创建 SWAP
-为了防止内存爆掉，可启用内存交换区，如创建一个 2048 M 的页面文件。
+在执行下面命令之前，确保私钥已经保存到自己的电脑（自己的 Windows / Linux / MacOS 电脑，
+而不是 VPS），否则重启 sshd 服务后，将无法通过密码再连接到 VPS，而只能用私钥连接。
 
+```
+$ systemctl restart sshd
+# 重启 sshd 服务
+```
+
+假如保存下来的私钥文件名为 `id_rsa.vultr`，那后面要通过 SSH 连接 VPS 时，执行下面命令
+即可。
+
+```sh
+$ ssh -i id_rsa.vultr root@112.113.114.115
+```
+
+> 将 `112.113.114.115` 替换为你的 VPS 公网 IP。
+
+## 创建 SWAP
 ```sh
 $ dd if=/dev/zero of=/swapfile bs=1024k count=2048
 $ chmod 600 /swapfile

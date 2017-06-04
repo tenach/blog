@@ -422,6 +422,8 @@ $ ssh -i id_rsa.vultr root@112.113.114.115
 
 > 将 `112.113.114.115` 替换为你的 VPS 公网 IP。
 
+> Windows 用户可下载并学习 XShell 的使用，XShell 实现了 SSH 具有图形化配置界面。
+
 ## 创建 SWAP
 ```sh
 $ dd if=/dev/zero of=/swapfile bs=1024k count=2048

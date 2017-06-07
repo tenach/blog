@@ -425,6 +425,7 @@ $ ssh -i id_rsa.vultr root@112.113.114.115
 > Windows 用户可下载并学习 XShell 的使用，XShell 实现了 SSH 具有图形化配置界面。
 
 ## 创建 SWAP
+为了防止内存溢出导致主机重启，可创建一个 2048M 的 SWAP 文件 /swapfile 。
 ```sh
 $ dd if=/dev/zero of=/swapfile bs=1024k count=2048
 $ chmod 600 /swapfile

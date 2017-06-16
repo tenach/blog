@@ -244,7 +244,7 @@ systemctl start docker && systemctl enable docker
 
 ```sh
 docker run -d --restart=always \
-    -p 8388:8388 fanach/ssserver:go -p 8388 -k abc123
+    -p 8388:8388 fanach/ssserver -p 8388 -k abc123
 ```
 
 这样，在后台将会有一个 ssserver 的容器在运行。执行 `docker ps` 查看。
@@ -264,12 +264,12 @@ docker run -d --restart=always \
 
 ```sh
 docker run -d --restart=always \
-    -p 8388:8388 fanach/ssserver:go -p 8388 -k abc123
+    -p 8388:8388 fanach/ssserver -p 8388 -k abc123
 ```
 
 上面那条 `docker run` 命令执行后，将会做下面事情。
 
-1. 下载 fanach/ssserver:go 这个镜像；
+1. 下载 fanach/ssserver 这个镜像；
 2. 根据给的端口、密码等参数，在后台运行一个 ssserver 容器。
 
 这里 `-d` 是指在后台运行。
@@ -307,10 +307,10 @@ docker run -d --restart=always \
 
 ```sh
 docker run -d --restart=always \
-    -p 8399:8388 fanach/ssserver:go -p 8388 -k abc456
+    -p 8399:8388 fanach/ssserver -p 8388 -k abc456
 ```
 
-> 如果对镜像 fanach/ssserver:go 有兴趣，可到点击 [这里][ssserver-image] 到 DockerHub 查看。
+> 如果对镜像 fanach/ssserver 有兴趣，可到点击 [这里][ssserver-image] 到 DockerHub 查看。
 Dockerfile 开源于 [fanach/dockerfile-ssserver][ssserver-github]。
 
 ## 状态查询
@@ -435,6 +435,11 @@ $ swapon /swapfile
 
 # Tips
 * 如果不是用 root 用户，需要在部分命令之前加上 `sudo`。
+
+# 修改历史
+* 2017.06.17 修复 go 版 ssserver 对安卓不兼容问题（默认镜像改为 fanach/ssserver ）。
+* 2017.06.08 添加 swap 说明。
+* 2017.06.04 添加拓展部分：安全配置。
 
 [1]: https://www.vultr.com
 [2]: https://www.docker.com

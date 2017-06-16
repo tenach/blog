@@ -4,7 +4,7 @@ date = "2017-06-03"
 +++
 
 <center>
-<img src="vultr-logo.png" width="50%" />
+<img src="vultr-logo.png" width="50%"/>
 
 Vultr 云平台
 </center>
@@ -24,30 +24,30 @@ Vultr 云平台
 打开 Vultr 网站 [www.vultr.com][1]。
 
 <center>
-<img src="ss-server-vultr-01.png" width="95%" />
+<img src="ss-server-vultr-01.png" width="95%"/>
 
-图1. Vultr 主页
+图 1. Vultr 主页
 </center>
 
 点击右上角 “Create Account” 创建帐号，填入邮箱和密码。
 
 <center>
-<img src="ss-server-vultr-02.png" width="95%" />
+<img src="ss-server-vultr-02.png" width="95%"/>
 
-图2. 创建 Vultr 帐号
+图 2. 创建 Vultr 帐号
 </center>
 
 接着进入邮箱，查收确认邮件。
 
 <center>
-<img src="ss-server-vultr-03.png" width="95%" />
+<img src="ss-server-vultr-03.png" width="95%"/>
 
-图3. 到邮箱确认注册
+图 3. 到邮箱确认注册
 </center>
 
 点击邮件中的确认按钮，通过验证并自动登录到 Vultr。
 
-# <span id = "setpay">配置支付方式</span>
+# <span id ="setpay"> 配置支付方式 </span>
 在购买 VPS 之前，需要配置付款方式，才能进行支付。
 
 支付方式有 3 种：
@@ -77,9 +77,9 @@ PayPal 账户无需实名认证，可以使用银联的借记卡。
 的手机号。
 
 <center>
-<img src="ss-server-vultr-04.png" width="95%" />
+<img src="ss-server-vultr-04.png" width="95%"/>
 
-图4. 绑定银行卡到 PayPal
+图 4. 绑定银行卡到 PayPal
 </center>
 
 接着会收到一条银联的验证短信，填入验证码，完成绑定。
@@ -101,21 +101,21 @@ PayPal 付完款后可以随时解除银行卡关联。如要解除绑定，点�
 
 银联卡只能用以进行在线购物。
 
-# <span id = "pay2vultr">充值到 Vultr</span>
+# <span id ="pay2vultr"> 充值到 Vultr</span>
 在创建 Vultr 主机前，需要先充值一定金额到 Vultr 帐号。这里充值 5 美元。
 
 <center>
-<img src="ss-server-vultr-05.png" width="95%" />
+<img src="ss-server-vultr-05.png" width="95%"/>
 
-图5. 用 PayPal 充值到 Vultr 账户
+图 5. 用 PayPal 充值到 Vultr 账户
 </center>
 
 在支付页面，同意并继续。
 
 <center>
-<img src="ss-server-vultr-06.png" width="95%" />
+<img src="ss-server-vultr-06.png" width="95%"/>
 
-图6. 用 PayPal 支付
+图 6. 用 PayPal 支付
 </center>
 
 接着会再要求登入一次 PayPal 账户并填写验证码，完成付款。
@@ -124,19 +124,19 @@ PayPal 付完款后可以随时解除银行卡关联。如要解除绑定，点�
 付款完成后，将自动进入购买主机页面。
 
 <center>
-<img src="ss-server-vultr-07.png" width="95%" />
+<img src="ss-server-vultr-07.png" width="95%"/>
 
-图7. 创建主机
+图 7. 创建主机
 </center>
 
 主机配置可参考下表。
 
 <center>
-表1. 主机配置参考
+表 1. 主机配置参考
 </center>
 
 
-|项目|值|
+| 项目 | 值 |
 |:--|--:|
 |Server Location|Asia / Singapore|
 |Server Type|CentOS 7 x64|
@@ -151,9 +151,9 @@ PayPal 付完款后可以随时解除银行卡关联。如要解除绑定，点�
 不出意外，将会有一台主机在部署。
 
 <center>
-<img src="ss-server-vultr-08.png" width="95%" />
+<img src="ss-server-vultr-08.png" width="95%"/>
 
-图8. 创建中的主机
+图 8. 创建中的主机
 </center>
 
 
@@ -164,9 +164,9 @@ PayPal 付完款后可以随时解除银行卡关联。如要解除绑定，点�
 记下这三项，后面所说的登录 VPS 要填写的用户名、密码，就是这一套。
 
 <center>
-<img src="ss-server-vultr-09.png" width="95%" />
+<img src="ss-server-vultr-09.png" width="95%"/>
 
-图9. 主机详细信息
+图 9. 主机详细信息
 </center>
 
 如果你用的电脑是 Linux 或 MacOS 系统。则可以直接用 SSH 连接过去。
@@ -182,17 +182,17 @@ ssh root@112.113.114.115
 提供的网页控制台。
 
 <center>
-<img src="ss-server-vultr-10.png" width="95%" />
+<img src="ss-server-vultr-10.png" width="95%"/>
 
-图10. 打开 Vultr 控制台
+图 10. 打开 Vultr 控制台
 </center>
 
 在网页控制台，输入 VPS 的用户名和密码。
 
 <center>
-<img src="ss-server-vultr-11.png" width="95%" />
+<img src="ss-server-vultr-11.png" width="95%"/>
 
-图11. Vultr 网页控制台
+图 11. Vultr 网页控制台
 </center>
 
 
@@ -202,9 +202,9 @@ ssh root@112.113.114.115
 命令安装 Docker 并启动 Shadowsocks 服务端。
 
 <center>
-<img src="ss-server-vultr-12.png" width="95%" />
+<img src="ss-server-vultr-12.png" width="95%"/>
 
-图12. Linux 中连接到 VPS
+图 12. Linux 中连接到 VPS
 </center>
 
 > 出于安全考虑，截图中 IP 等信息已被遮盖。
@@ -227,9 +227,9 @@ curl https://get.docker.com/ | sh
 出现下面信息，说明已经安装完成。执行 `docker version` 可查看版本信息。
 
 <center>
-<img src="ss-server-vultr-13.png" width="95%" />
+<img src="ss-server-vultr-13.png" width="95%"/>
 
-图13. 在 VPS 中安装 Docker
+图 13. 在 VPS 中安装 Docker
 </center>
 
 启用 Docker daemon 进程，并加入开机启动项。
@@ -250,9 +250,9 @@ docker run -d --restart=always \
 这样，在后台将会有一个 ssserver 的容器在运行。执行 `docker ps` 查看。
 
 <center>
-<img src="ss-server-vultr-14.png" width="95%" />
+<img src="ss-server-vultr-14.png" width="95%"/>
 
-图14. 启动 Shadowsocks 容器
+图 14. 启动 Shadowsocks 容器
 </center>
 
 接着，可以通过服务器地址、端口 `8388`、密码 `abc123` 以及默认加密方式 `aes-256-cfb`
@@ -310,17 +310,17 @@ docker run -d --restart=always \
     -p 8399:8388 fanach/ssserver:go -p 8388 -k abc456
 ```
 
-> 如果对镜像 fanach/ssserver:go 有兴趣，可到点击[这里][ssserver-image]到 DockerHub 查看。
-Dockerfile 开源于 [ fanach/dockerfile-ssserver][ssserver-github]。
+> 如果对镜像 fanach/ssserver:go 有兴趣，可到点击 [这里][ssserver-image] 到 DockerHub 查看。
+Dockerfile 开源于 [fanach/dockerfile-ssserver][ssserver-github]。
 
 ## 状态查询
 ### 基本信息
 执行 `docker ps -a` 可查询所有容器（包括已退出的）的简要信息。第一列为容器 ID。
 
 <center>
-<img src="ss-server-vultr-15.png" width="95%" />
+<img src="ss-server-vultr-15.png" width="95%"/>
 
-图15. Docker 容器
+图 15. Docker 容器
 </center>
 
 ### 日志查询
@@ -335,16 +335,16 @@ Dockerfile 开源于 [ fanach/dockerfile-ssserver][ssserver-github]。
 执行 `docker stats` 并跟上容器 ID 查询容器资源使用情况。
 
 <center>
-<img src="ss-server-vultr-16.png" width="95%" />
+<img src="ss-server-vultr-16.png" width="95%"/>
 
-图16. 查看容器资源用量
+图 16. 查看容器资源用量
 </center>
 
 其中 `NET I/O` 分别为这个 ssserver 容器输入和输出的流量。
 
 > 如果想要查看整个 VPS 流量使用情况，到 Vultr 主机详细信息页面查看。
 
-# <span id = "clientcfg">客户端连接与验证</span>
+# <span id ="clientcfg"> 客户端连接与验证 </span>
 
 Android 用户见： 《[Android 上使用 Shadowsocks 教程][ss-android]》
 
@@ -384,7 +384,7 @@ There were 4728 failed login attempts since the last successful login.
 一个好的方法是禁用密码登录，而是只使用密钥登录。这里密钥是指用
 OpenSSL 工具生成的非对称密钥对。
 
-**为了安全，推荐禁止密码登录，只允许使用私钥登录。**
+** 为了安全，推荐禁止密码登录，只允许使用私钥登录。**
 
 ### 添加公钥
 生成密钥对，添加公钥到受信任的密钥中，并保留私钥。
@@ -401,8 +401,8 @@ $ cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 ```sh
 $ vi /etc/ssh/sshd_config
 # 查找并修改下面两项
-PasswordAuthentication no //禁止使用基于口令认证的方式登陆
-PubkeyAuthentication yes //允许使用基于密钥认证的方式登陆
+PasswordAuthentication no // 禁止使用基于口令认证的方式登陆
+PubkeyAuthentication yes // 允许使用基于密钥认证的方式登陆
 ```
 
 在执行下面命令之前，确保私钥已经保存到自己的电脑（自己的 Windows / Linux / MacOS 电脑，

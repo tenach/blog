@@ -437,11 +437,12 @@ $ swapon /swapfile
 * 如果不是用 root 用户，需要在部分命令之前加上 `sudo`。
 
 # 修改历史
+* 2017.08.05 使用 Vultr Affiliate 链接
 * 2017.06.17 修复 go 版 ssserver 对安卓不兼容问题（默认镜像改为 fanach/ssserver ）。
 * 2017.06.08 添加 swap 说明。
 * 2017.06.04 添加拓展部分：安全配置。
 
-[1]: https://www.vultr.com
+[1]: http://www.vultr.com/?ref=7182454
 [2]: https://www.docker.com
 [3]: https://www.docker.com/what-docker
 [ssserver-image]: https://hub.docker.com/r/fanach/ssserver/
